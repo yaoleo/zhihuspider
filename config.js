@@ -7,9 +7,9 @@ exports.jsonPath = "./json/";//生成json文件的路径
 exports.avatarPath = "./avatar/";//保存头像文件的路径
 exports.dbconfig = {
     host: 'localhost',//数据库服务器
-    user: 'dbuser',//数据库用户名
-    password: 'dbpassword',//数据库密码
-    database: 'dbname',//数据库名
+    user: 'root',//数据库用户名
+    password: 'zjy2580925?',//数据库密码
+    database: 'zhihuspider',//数据库名
     port: 3306,//数据库服务器端口
     poolSize: 20,
     acquireTimeout: 30000

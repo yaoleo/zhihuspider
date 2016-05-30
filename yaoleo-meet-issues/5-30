@@ -1,0 +1,53 @@
+安装没什么问题
+
+在最后执行的时候
+
+遇到
+
+	yaoleo@yaoleo:~/git/zhihuspider$ forever -l log.txt index.js -i
+	warn:    --minUptime not set. Defaulting to: 1000ms
+	warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+	/home/yaoleo/git/zhihuspider/node_modules/images/binding.js:61
+	throw new Error('Can\'t load the addon. Issue to: ' + bugUrl);
+	^
+
+	Error: Can't load the addon. Issue to: https://github.com/zhangyuanwei/node-images/issues
+	    at Object.<anonymous> (/home/yaoleo/git/zhihuspider/node_modules/images/binding.js:61:7)
+	    at Module._compile (module.js:430:26)
+	    at Object.Module._extensions..js (module.js:448:10)
+	    at Module.load (module.js:355:32)
+	    at Function.Module._load (module.js:310:12)
+	    at Module.require (module.js:365:17)
+	    at require (module.js:384:17)
+	    at Object.<anonymous> (/home/yaoleo/git/zhihuspider/node_modules/images/index.js:4:15)
+	    at Module._compile (module.js:430:26)
+	    at Object.Module._extensions..js (module.js:448:10)
+	error: Forever detected script exited with code: 1
+
+连接里github有issue提到解决方案
+
+npm install images
+cd node_modules/images 
+tar -zxf node-images.tar.gz .
+node install.js
+
+亲测有效
+
+
+然而
+
+yaoleo@yaoleo:~/git/zhihuspider$ forever -l log.txt index.js -i
+warn:    --minUptime not set. Defaulting to: 1000ms
+warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+2016-05-30 22:52:09 First task will start after 2016-05-30 22:52:10
+2016-05-30 22:52:10 Task 1 start.
+2016-05-30 22:52:10 Get cookie and session id.
+ERROR: 2016-05-30 22:55:05 Task 1 canceled.
+MySQL pool ended successfully.
+ERROR: 2016-05-30 22:55:06 Send cookie error mail error : AuthError: Invalid login - 535 Error: ��ʹ����Ȩ����¼�������뿴: http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256
+
+
+
+
+夜深沉 明天再看
+

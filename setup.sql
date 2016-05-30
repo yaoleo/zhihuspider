@@ -109,8 +109,8 @@ CREATE TABLE IF NOT EXISTS `usertopanswers` (
   `noshare` tinyint(1) NOT NULL,
   `len` int(11) NOT NULL,
   `imgcount` int(11) NOT NULL,
-  `summary` varchar(2000) CHARACTER SET utf8mb4 COLLATE = utf8mb4_unicode_ci NOT NULL,
-  `content` mediumtext CHARACTER SET utf8mb4 COLLATE = utf8mb4_unicode_ci NOT NULL
+  `summary` varchar(2000) CHARACTER SET utf8 NOT NULL,
+  `content` mediumtext CHARACTER SET utf8  NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -118,6 +118,7 @@ CREATE TABLE IF NOT EXISTS `usertopanswers` (
 --
 -- Struct of table `wpdetail`
 --
+
 
 CREATE TABLE IF NOT EXISTS `wpdetail` (
   `tid` int(11) NOT NULL,
